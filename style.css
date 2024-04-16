@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --blue: rgb(79, 125, 243);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  /* width: 100vw; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 1rem;
+}
+
+.text {
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.text__title {
+  color: var(--gray);
+  font-size: 1.5rem;
+}
+.text__title--bold {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+}
+.text__desc {
+  font-size: 0.75rem;
+  color: var(--very-dark-blue);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+form .field {
+  position: relative;
+}
+
+form input {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--pale-blue);
+  border-radius: 9999px;
+  font-family: "Libre Franklin", sans-serif;
+  color: var(--very-dark-blue);
+  width: 100%;
+}
+
+form input::placeholder {
+  color: var(--pale-blue);
+  font-weight: 300;
+}
+
+form input:focus {
+  outline: none;
+}
+
+#submit {
+  font-family: "Libre Franklin", sans-serif;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--pale-blue);
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#submit:hover {
+  opacity: 0.8;
+}
+
+.illustration {
+  max-width: 30rem;
+  width: 80%;
+  height: max-content;
+}
+
+footer {
+  margin: 0 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .copyright {
+  font-size: .75rem;
+}
+
+footer .logos {
+  display: flex;
+  gap: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--pale-blue);
+  border-radius: 9999px;
+  transition: 0.2s;
+}
+
+.fa {
+  color: var(--blue);
+  width: max-content;
+  height: 1rem;
+}
+
+footer a:hover {
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+}
+
+footer a:hover .fa {
+  color: var(--white);
+}
+
+.form--error {
+  gap: 2rem;
+}
+
+.form--error input {
+  border: 1px solid var(--light-red);
+}
+
+.form--error input::placeholder {
+  color: var(--light-red);
+}
+
+.form--error .field::after {
+  content: "Please provide a valid email address";
+  font-size: .6rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--light-red);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: -70%;
+}
+
+@media (min-width: 900px) {
+  .container {
+    gap: 1rem;
+  }
+  form {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .field {
+    min-width: 20rem;
+    position: relative;
+  }
+  .form--error {
+    gap: .75rem;
+  }
+  .form--error .field::after {
+    left: 0;
+    transform: translate(1.5rem);
+    bottom: -70%;
+  }
+}
